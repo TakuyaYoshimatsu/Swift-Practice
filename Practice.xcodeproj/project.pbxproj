@@ -7,29 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		407DEB0D25AEC27100C77280 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407DEB0C25AEC27100C77280 /* SelectViewController.swift */; };
 		4081B04C25ADACB4009349C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4081B04B25ADACB4009349C1 /* AppDelegate.swift */; };
 		4081B04E25ADACB4009349C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4081B04D25ADACB4009349C1 /* SceneDelegate.swift */; };
-		4081B05025ADACB4009349C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4081B04F25ADACB4009349C1 /* ViewController.swift */; };
 		4081B05325ADACB4009349C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4081B05125ADACB4009349C1 /* Main.storyboard */; };
 		4081B05525ADACB7009349C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4081B05425ADACB7009349C1 /* Assets.xcassets */; };
 		4081B05825ADACB7009349C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4081B05625ADACB7009349C1 /* LaunchScreen.storyboard */; };
-		40B527A625B6726400CF61E7 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B527A525B6726400CF61E7 /* CameraViewController.swift */; };
+		40C0229725C7A5DB008D2F03 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C0229325C7A5DB008D2F03 /* SelectViewController.swift */; };
+		40C0229825C7A5DB008D2F03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C0229425C7A5DB008D2F03 /* ViewController.swift */; };
+		40C0229925C7A5DB008D2F03 /* ImageScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C0229525C7A5DB008D2F03 /* ImageScrollViewController.swift */; };
+		40C0229A25C7A5DB008D2F03 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C0229625C7A5DB008D2F03 /* CameraViewController.swift */; };
 		F928E5CB9E8741164D9F8A52 /* Pods_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C260F59E61CA08CA17849A5C /* Pods_Practice.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		036F751EB60E4C8A7C96F99B /* Pods-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice.release.xcconfig"; path = "Target Support Files/Pods-Practice/Pods-Practice.release.xcconfig"; sourceTree = "<group>"; };
-		407DEB0C25AEC27100C77280 /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		4081B04825ADACB4009349C1 /* Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4081B04B25ADACB4009349C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4081B04D25ADACB4009349C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4081B04F25ADACB4009349C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4081B05225ADACB4009349C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4081B05425ADACB7009349C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4081B05725ADACB7009349C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4081B05925ADACB7009349C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40B527A525B6726400CF61E7 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		40C0229325C7A5DB008D2F03 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
+		40C0229425C7A5DB008D2F03 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		40C0229525C7A5DB008D2F03 /* ImageScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScrollViewController.swift; sourceTree = "<group>"; };
+		40C0229625C7A5DB008D2F03 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		C260F59E61CA08CA17849A5C /* Pods_Practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C39C38240318B042A7750401 /* Pods-Practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice.debug.xcconfig"; path = "Target Support Files/Pods-Practice/Pods-Practice.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,17 +78,42 @@
 		4081B04A25ADACB4009349C1 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
+				40C0229225C7A5DB008D2F03 /* Controller */,
+				40C0229025C7A5DB008D2F03 /* Model */,
+				40C0229125C7A5DB008D2F03 /* View */,
 				4081B04B25ADACB4009349C1 /* AppDelegate.swift */,
 				4081B04D25ADACB4009349C1 /* SceneDelegate.swift */,
-				4081B04F25ADACB4009349C1 /* ViewController.swift */,
 				4081B05125ADACB4009349C1 /* Main.storyboard */,
 				4081B05425ADACB7009349C1 /* Assets.xcassets */,
 				4081B05625ADACB7009349C1 /* LaunchScreen.storyboard */,
 				4081B05925ADACB7009349C1 /* Info.plist */,
-				407DEB0C25AEC27100C77280 /* SelectViewController.swift */,
-				40B527A525B6726400CF61E7 /* CameraViewController.swift */,
 			);
 			path = Practice;
+			sourceTree = "<group>";
+		};
+		40C0229025C7A5DB008D2F03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40C0229125C7A5DB008D2F03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		40C0229225C7A5DB008D2F03 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				40C0229325C7A5DB008D2F03 /* SelectViewController.swift */,
+				40C0229425C7A5DB008D2F03 /* ViewController.swift */,
+				40C0229525C7A5DB008D2F03 /* ImageScrollViewController.swift */,
+				40C0229625C7A5DB008D2F03 /* CameraViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		AF00566BAA7D571232B30C8D /* Frameworks */ = {
@@ -211,11 +238,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4081B05025ADACB4009349C1 /* ViewController.swift in Sources */,
-				40B527A625B6726400CF61E7 /* CameraViewController.swift in Sources */,
-				407DEB0D25AEC27100C77280 /* SelectViewController.swift in Sources */,
 				4081B04C25ADACB4009349C1 /* AppDelegate.swift in Sources */,
+				40C0229925C7A5DB008D2F03 /* ImageScrollViewController.swift in Sources */,
+				40C0229725C7A5DB008D2F03 /* SelectViewController.swift in Sources */,
+				40C0229825C7A5DB008D2F03 /* ViewController.swift in Sources */,
 				4081B04E25ADACB4009349C1 /* SceneDelegate.swift in Sources */,
+				40C0229A25C7A5DB008D2F03 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

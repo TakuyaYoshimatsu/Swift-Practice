@@ -69,6 +69,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "nextScreen", sender: nil)
     }
     
+    @IBAction func imageListButton(_ sender: Any) {
+        performSegue(withIdentifier: "nextImageScreen", sender: nil)
+    }
     //segueが動作することをViewControllerに通知するメソッド
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
