@@ -77,6 +77,10 @@ class CameraViewController: UIViewController,AVCapturePhotoCaptureDelegate {
         initImageView()
     }
     
+    override func viewDidLayoutSubviews() {
+        
+    }
+    
     var imageView:UIImageView?
     //ガイドライン
     private func initImageView(){
@@ -123,14 +127,22 @@ class CameraViewController: UIViewController,AVCapturePhotoCaptureDelegate {
             
             outputImageView.frame = CGRect(x: 0, y: 90, width: screenWidth, height: pvHeightSize)
             outputImageView.center = CGPoint(x:screenWidth/2, y:screenHeight/2)
-            
+
             let imageData = photo.fileDataRepresentation()
             let photo = UIImage(data: imageData!)
+            let trimWidth = 640.0
+            let trimHeight = 480.0
+            let scaleRate = Double(photo!.size.width) / trimWidth
+            let captureWidth = trimWidth * scaleRate
+            let captureHeight = trimHeight * scaleRate
             
-  
-            outputImageView.image = photo
+            let rect:CGRect = CGRect(x:0, y: (Double(photo!.size.height) / 2) - (captureHeight / 2), width: captureWidth, height: captureHeight)
             
-            tempImage = photo
+            let cropping = photo!.cropping(to: rect)
+
+            outputImageView.image = cropping
+            
+            tempImage = cropping
             
             self.view.addSubview(outputImageView)
             session.stopRunning()
@@ -192,55 +204,30 @@ extension UIImage.Orientation {
 }
 
 extension UIImage {
-    func cropping(to rect: CGRect) -> UIImage? {
-        let croppingRect: CGRect = imageOrientation.isLandscape ? rect.switched : rect
-        guard let cgImage: CGImage = self.cgImage?.cropping(to: croppingRect) else { return nil }
-        let cropped: UIImage = UIImage(cgImage: cgImage, scale: scale, orientation: imageOrientation)
-        return cropped
+  // resize image
+  func reSizeImage(reSize:CGSize)->UIImage {
+    //UIGraphicsBeginImageContext(reSize);
+    UIGraphicsBeginImageContextWithOptions(reSize,false,UIScreen.main.scale);
+    self.draw(in: CGRect(x: 0, y: 0, width: reSize.width, height: reSize.height));
+    let reSizeImage:UIImage! = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return reSizeImage;
+  }
+   
+  func cropping(to: CGRect) -> UIImage? {
+    var opaque = false
+    if let cgImage = cgImage {
+      switch cgImage.alphaInfo {
+      case .noneSkipLast, .noneSkipFirst:
+        opaque = true
+      default:
+        break
+      }
     }
-    
-    // resize image
-    func reSizeImage(reSize:CGSize)->UIImage {
-        //UIGraphicsBeginImageContext(reSize);
-        UIGraphicsBeginImageContextWithOptions(reSize,false,UIScreen.main.scale);
-        self.draw(in: CGRect(x: 0, y: 0, width: reSize.width, height: reSize.height));
-        let reSizeImage:UIImage! = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        return reSizeImage;
-    }
-
-    // scale the image at rates
-    func scaleImage(scaleSize:CGFloat)->UIImage {
-        let reSize = CGSize(width: self.size.width * scaleSize, height: self.size.height * scaleSize)
-        return reSizeImage(reSize: reSize)
-    }
-}
-
-extension UIImageView {
-    func transformByImage(rect : CGRect) -> CGRect? {
-        guard let image = self.image else { return nil }
-        let imageSize = image.size
-        let imageOrientation = image.imageOrientation
-        let selfSize = self.frame.size
-
-        let scaleWidth = imageSize.width / selfSize.width
-        let scaleHeight = imageSize.height / selfSize.height
-
-        var transform: CGAffineTransform
-
-        switch imageOrientation {
-        case .left:
-            transform = CGAffineTransform(rotationAngle: .pi / 2).translatedBy(x: 0, y: -image.size.height)
-        case .right:
-            transform = CGAffineTransform(rotationAngle: -.pi / 2).translatedBy(x: -image.size.width, y: 0)
-        case .down:
-            transform = CGAffineTransform(rotationAngle: -.pi).translatedBy(x: -image.size.width, y: -image.size.height)
-        default:
-            transform = .identity
-        }
-
-        transform = transform.scaledBy(x: scaleWidth, y: scaleHeight)
-
-        return rect.applying(transform)
-    }
+    UIGraphicsBeginImageContextWithOptions(to.size, opaque, scale)
+    draw(at: CGPoint(x: -to.origin.x, y: -to.origin.y))
+    let result = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return result
+  }
 }
